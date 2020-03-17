@@ -6,6 +6,7 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import android.content.Intent
 
+
 class MainActivity : AppCompatActivity() ,View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,10 +26,22 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener {
     }
     override fun onClick(v:View) {
         val intent=Intent(this, secondActivity::class.java)
-        startActivity(intent)
-        intent.putExtra("VALUE1", editText1.text.toString())
-        intent.putExtra("VALUE2", editText2.text.toString())
+
+        if  (v.getId() == R.id.button1){
+            intent.putExtra(
+                "VALUE",
+                "${(editText1.text.toString().toDouble()) + (editText2.text.toString().toDouble())}"
+            )}
+
+
+        else if (v.getId() == R.id.button2){
+        intent.putExtra("VALUE", "${(editText1.text.toString().toDouble() )-( editText2.text.toString().toDouble())}")}
+
+        else if (v.getId() == R.id.button3){
+        intent.putExtra("VALUE", "${(editText1.text.toString().toDouble()) / (editText2.text.toString().toDouble())}")}
+
+        else if (v.getId() == R.id.button4) {
+            intent.putExtra("VALUE", "${(editText1.text.toString().toDouble()) * (editText2.text.toString().toDouble())}") }
         startActivity(intent)
     }
-
 }
