@@ -30,18 +30,18 @@ class MainActivity : AppCompatActivity() ,View.OnClickListener {
         if  (v.getId() == R.id.button1){
             intent.putExtra(
                 "VALUE",
-                "${(editText1.text.toString().toDouble()) + (editText2.text.toString().toDouble())}"
+                "${editText1.text.toString().toDouble() + editText2.text.toString().toDouble()}"
             )}
 
 
         else if (v.getId() == R.id.button2){
-        intent.putExtra("VALUE", "${(editText1.text.toString().toDouble() )-( editText2.text.toString().toDouble())}")}
+        intent.putExtra("VALUE", "${editText1.text.toString().toDouble() -editText2.text.toString().toDouble()}")}
 
         else if (v.getId() == R.id.button3){
-        intent.putExtra("VALUE", "${(editText1.text.toString().toDouble()) / (editText2.text.toString().toDouble())}")}
+        intent.putExtra("VALUE", "${editText1.text.toString().toDouble() / editText2.text.toString().toDouble()}")}
 
         else if (v.getId() == R.id.button4) {
-            intent.putExtra("VALUE", "${(editText1.text.toString().toDouble()) * (editText2.text.toString().toDouble())}") }
+            intent.putExtra("VALUE", "${editText1.text.toString().toDouble() * editText2.text.toString().toDouble()}") }
         startActivity(intent)
     }
 }
